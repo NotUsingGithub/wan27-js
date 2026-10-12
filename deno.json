@@ -1,0 +1,11 @@
+{
+  "name": "@notusinggithub/wan27",
+  "version": "0.1.0",
+  "license": "MIT",
+  "exports": "./mod.ts",
+  "publish": { "include": ["mod.ts", "README.md", "LICENSE", "deno.json"] },
+  "tasks": {
+    "check": "deno check mod.ts",
+    "test": "deno test --deny-net mod_test.ts"
+  }
+}
