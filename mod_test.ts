@@ -91,6 +91,7 @@ Deno.test("validation blocks missing auth, bad keys, traversal, limits and overs
   await rejects(() => wan.model(".."), "INVALID_INPUT");
   await rejects(() => wan.task(""), "INVALID_INPUT");
   await rejects(() => wan.tasks({ limit: 0 }), "INVALID_INPUT");
+  await rejects(() => wan.tasks({ limit: 51 }), "INVALID_INPUT");
   await rejects(
     () => wan.estimate({ ...input, prompt: "é".repeat(17000) }),
     "INVALID_INPUT",

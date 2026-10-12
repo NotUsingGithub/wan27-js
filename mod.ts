@@ -224,8 +224,8 @@ export class Wan27 {
   /** Read recent tasks. An ambiguous submission is not proof of failure. */
   tasks(options: { limit?: number; cursor?: string } = {}): Promise<ApiObject> {
     const limit = options.limit ?? 20;
-    if (!Number.isInteger(limit) || limit < 1 || limit > 100) {
-      throw new Wan27Error("INVALID_INPUT", "limit must be between 1 and 100.");
+    if (!Number.isInteger(limit) || limit < 1 || limit > 50) {
+      throw new Wan27Error("INVALID_INPUT", "limit must be between 1 and 50.");
     }
     const query = new URLSearchParams({ limit: String(limit) });
     if (options.cursor) query.set("cursor", options.cursor);
