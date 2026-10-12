@@ -12,11 +12,15 @@ distribution.
 
 ## Usage
 
-Planned JSR package: `@notusinggithub/wan27`. Until registry publication
-completes, use `mod.ts` from this repository.
+Install from JSR:
+
+```sh
+npx jsr add @notusinggithub/wan27
+# Deno: deno add jsr:@notusinggithub/wan27
+```
 
 ```ts
-import { Wan27 } from "./mod.ts";
+import { Wan27 } from "@notusinggithub/wan27";
 
 // Server-side only: supply an existing access token from your secret store.
 const wan = new Wan27({ token: process.env.WAN27_ACCESS_TOKEN! });
